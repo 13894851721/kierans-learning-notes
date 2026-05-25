@@ -1,0 +1,31 @@
+<svg width="720" height="560" viewBox="0 0 720 560" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Kieran 的学习地图</title>
+  <desc id="desc">一张安静的知识地图，连接英语、AI、历史地理和成长记录。</desc>
+  <rect width="720" height="560" rx="28" fill="#FFFFFF"/>
+  <rect x="42" y="42" width="636" height="476" rx="22" fill="#F6F8FB" stroke="#E2E8F0"/>
+  <path d="M164 132H438C470 132 496 158 496 190V414C496 427 485 438 472 438H188C142 438 104 400 104 354V192C104 159 131 132 164 132Z" fill="#FFFFFF" stroke="#DCE5EF" stroke-width="3"/>
+  <path d="M190 132H506C538 132 564 158 564 190V388C564 416 542 438 514 438H190C222 421 240 392 240 356V190C240 158 222 132 190 132Z" fill="#FFFFFF" stroke="#DCE5EF" stroke-width="3"/>
+  <path d="M286 189H504" stroke="#C8D6E3" stroke-width="7" stroke-linecap="round"/>
+  <path d="M286 229H478" stroke="#C8D6E3" stroke-width="7" stroke-linecap="round"/>
+  <path d="M286 269H520" stroke="#C8D6E3" stroke-width="7" stroke-linecap="round"/>
+  <path d="M286 309H456" stroke="#C8D6E3" stroke-width="7" stroke-linecap="round"/>
+  <path d="M286 349H498" stroke="#C8D6E3" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="178" cy="218" r="40" fill="#1F4E79"/>
+  <path d="M160 220C172 205 187 205 198 220" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="568" cy="118" r="46" fill="#D4A017"/>
+  <path d="M550 120H586" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  <path d="M568 102V138" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="123" cy="422" r="34" fill="#EAF1F7" stroke="#C8D6E3" stroke-width="3"/>
+  <path d="M107 422H139" stroke="#1F4E79" stroke-width="6" stroke-linecap="round"/>
+  <path d="M123 406V438" stroke="#1F4E79" stroke-width="6" stroke-linecap="round"/>
+  <path d="M111 246C84 254 68 276 68 305C68 347 96 374 132 377" stroke="#D4A017" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 12"/>
+  <path d="M537 146C582 180 604 224 604 278C604 338 574 389 528 416" stroke="#1F4E79" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 12"/>
+  <rect x="78" y="82" width="156" height="46" rx="23" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="156" y="111" text-anchor="middle" fill="#1F4E79" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="18" font-weight="700">英语学习</text>
+  <rect x="468" y="462" width="156" height="46" rx="23" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="546" y="491" text-anchor="middle" fill="#1F4E79" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="18" font-weight="700">AI 工具</text>
+  <rect x="74" y="474" width="190" height="46" rx="23" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="169" y="503" text-anchor="middle" fill="#1F4E79" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="18" font-weight="700">成长记录</text>
+  <rect x="432" y="66" width="204" height="46" rx="23" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="534" y="95" text-anchor="middle" fill="#1F4E79" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="18" font-weight="700">历史地理</text>
+</svg>
