@@ -79,31 +79,66 @@ https://你的用户名.github.io/仓库名/
 
 ## 如何新增一篇文章或笔记
 
-第一版可以先在对应分类页面里新增文章卡片。
+现在网站已经包含一个轻量后台页面：
 
-卡片包含：
+```text
+admin.html
+```
+
+发布后的后台地址类似：
+
+```text
+https://你的用户名.github.io/仓库名/admin.html
+```
+
+后台会把文章保存到 `posts.json`。首页、分类页和文章详情页会自动读取这个文件。
+
+### 准备 GitHub Token
+
+因为 GitHub Pages 是静态网站，没有服务器后台，所以保存文章需要使用 GitHub API。
+
+建议创建 Fine-grained personal access token：
+
+1. 打开 GitHub。
+2. 进入 `Settings` -> `Developer settings`。
+3. 选择 `Personal access tokens` -> `Fine-grained tokens`。
+4. 只选择这个仓库：`kierans-learning-notes`。
+5. 权限只开启：
+   - `Contents`: Read and write
+   - `Metadata`: Read-only
+6. 生成 token 后，在 `admin.html` 页面输入。
+
+不要把 token 写进代码，也不要提交到 GitHub 仓库。
+
+### 在网页上发布文章
+
+1. 打开 `admin.html`。
+2. 输入 GitHub Token。
+3. 填写标题、分类、日期、摘要、链接标识和正文 Markdown。
+4. 点击“保存并发布”。
+5. 等待 GitHub Pages 自动更新，通常需要 30-60 秒。
+
+每篇文章包含：
 
 - 分类标签
 - 标题
 - 简短描述
 - 日期
-- 继续阅读链接
+- Markdown 正文
 
 示例：
 
-```html
-<article class="note-card">
-  <span class="card-tag">发音笔记</span>
-  <h2>我的新英语笔记标题</h2>
-  <p>这里写一段简短说明，告诉读者这篇笔记记录了什么。</p>
-  <div class="card-meta">
-    <time datetime="2026-05-25">2026 年 5 月 25 日</time>
-    <a href="#note-template">继续阅读</a>
-  </div>
-</article>
+```json
+{
+  "slug": "my-first-note",
+  "title": "我的第一篇学习笔记",
+  "category": "english",
+  "categoryUrl": "english.html",
+  "summary": "这里写一段简短说明。",
+  "date": "2026-05-25",
+  "content": "# 标题\n\n## 我为什么写这篇？"
+}
 ```
-
-后续如果笔记越来越多，可以新建 `notes/` 文件夹，为每篇文章创建独立 HTML 页面。
 
 ## 推荐文章模板
 

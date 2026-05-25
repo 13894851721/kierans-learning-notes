@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kieran's Learning Notes 的个人文章编辑后台。">
+  <title>写文章 | Kieran's Learning Notes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="主导航">
+      <a class="brand" href="index.html">Kieran's Learning Notes</a>
+      <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" data-page="home">首页</a></li>
+        <li><a href="english.html" data-page="english">英语学习</a></li>
+        <li><a href="ai-tools.html" data-page="ai-tools">AI 工具</a></li>
+        <li><a href="history-geography.html" data-page="history">历史地理</a></li>
+        <li><a href="growth.html" data-page="growth">成长记录</a></li>
+        <li><a href="about.html" data-page="about">关于我</a></li>
+        <li><a href="admin.html" data-page="admin">写文章</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container narrow">
+        <p class="eyebrow">文章后台</p>
+        <h1>写文章、保存、发布。</h1>
+        <p>文章会保存到 GitHub 仓库的 <code>posts.json</code>，GitHub Pages 会自动重新发布。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container admin-layout">
+        <aside class="admin-sidebar">
+          <section class="admin-panel">
+            <h2>发布权限</h2>
+            <label for="github-token">GitHub Token</label>
+            <input id="github-token" type="password" autocomplete="off" placeholder="ghp_ 或 github_pat_">
+            <div class="admin-actions compact-actions">
+              <button class="button secondary-button" type="button" id="save-token">本次会话保存</button>
+              <button class="button secondary-button" type="button" id="clear-token">清除</button>
+            </div>
+            <p class="admin-help">建议使用 Fine-grained token，只给 <strong>kierans-learning-notes</strong> 仓库开启 Contents 读写权限。</p>
+          </section>
+
+          <section class="admin-panel">
+            <h2>已有文章</h2>
+            <div class="existing-posts" id="existing-posts">
+              <p class="admin-help">正在读取文章列表...</p>
+            </div>
+          </section>
+        </aside>
+
+        <section class="admin-panel editor-panel">
+          <div class="editor-heading">
+            <div>
+              <p class="eyebrow">编辑器</p>
+              <h2>新建文章</h2>
+            </div>
+            <button class="button secondary-button" type="button" id="new-post">清空新建</button>
+          </div>
+
+          <form id="post-form" class="post-form">
+            <input type="hidden" id="editing-slug">
+
+            <label for="post-title">标题</label>
+            <input id="post-title" type="text" required placeholder="例如：我的第一篇学习笔记">
+
+            <div class="form-grid">
+              <div>
+                <label for="post-category">分类</label>
+                <select id="post-category" required>
+                  <option value="english">英语学习</option>
+                  <option value="ai-tools">AI 工具</option>
+                  <option value="history">历史地理</option>
+                  <option value="growth">成长记录</option>
+                </select>
+              </div>
+              <div>
+                <label for="post-date">日期</label>
+                <input id="post-date" type="date" required>
+              </div>
+            </div>
+
+            <label for="post-summary">摘要</label>
+            <textarea id="post-summary" rows="3" required placeholder="用一两句话说明这篇文章记录了什么。"></textarea>
+
+            <label for="post-slug">文章链接标识</label>
+            <div class="slug-row">
+              <input id="post-slug" type="text" required placeholder="my-first-note">
+              <button class="button secondary-button" type="button" id="generate-slug">自动生成</button>
+            </div>
+
+            <label for="post-content">正文 Markdown</label>
+            <textarea id="post-content" class="content-editor" rows="20" required># 标题
+
+## 我为什么写这篇？
+
+## 核心要点
+
+## 我的笔记
+
+## 例子
+
+## 我学到了什么
+
+## 下一步
+</textarea>
+
+            <div class="admin-status" id="admin-status" role="status" aria-live="polite"></div>
+
+            <div class="admin-actions">
+              <button class="button primary-button" type="submit">保存并发布</button>
+              <button class="button secondary-button" type="button" id="preview-post">预览正文</button>
+            </div>
+          </form>
+
+          <article class="preview-panel post-body" id="preview-panel" hidden></article>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Kieran。作为一个学习项目而建立。</p>
+      <div class="footer-links">
+        <a href="index.html">笔记</a>
+        <a href="about.html">关于</a>
+        <a href="admin.html">写文章</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
