@@ -18,10 +18,12 @@ if (navToggle && navMenu) {
 const currentFile = window.location.pathname.split("/").pop() || "index.html";
 const pageMap = {
   "index.html": "home",
-  "english.html": "english",
-  "ai-tools.html": "ai-tools",
-  "history-geography.html": "history",
-  "growth.html": "growth",
+  "language.html": "language",
+  "ai-intelligence.html": "ai",
+  "humanities-history.html": "humanities",
+  "society-politics.html": "society",
+  "political-economy.html": "economy",
+  "daily.html": "daily",
   "about.html": "about",
   "admin.html": "admin"
 };
@@ -34,10 +36,16 @@ document.querySelectorAll("[data-page]").forEach((link) => {
 });
 
 const categoryLabels = {
-  english: "英语学习",
-  "ai-tools": "AI 工具",
-  history: "历史地理",
-  growth: "成长记录"
+  language: "语言学习",
+  ai: "AI 智能",
+  humanities: "人文历史",
+  society: "社会时政",
+  economy: "政治经济",
+  daily: "日常记录",
+  english: "语言学习",
+  "ai-tools": "AI 智能",
+  history: "人文历史",
+  growth: "日常记录"
 };
 
 function escapeHTML(value) {

@@ -8,10 +8,12 @@
 
 这个网站用于记录 Kieran 的长期学习内容，包括：
 
-- 英语学习
-- AI 工具
-- 历史地理
-- 成长记录
+- 语言学习
+- AI 智能
+- 人文历史
+- 社会时政
+- 政治经济
+- 日常记录
 - 关于我
 
 ## 项目结构
@@ -19,10 +21,16 @@
 ```text
 kierans-learning-notes/
 ├── index.html
-├── english.html
-├── ai-tools.html
-├── history-geography.html
-├── growth.html
+├── language.html
+├── ai-intelligence.html
+├── humanities-history.html
+├── society-politics.html
+├── political-economy.html
+├── daily.html
+├── english.html              # 旧链接跳转到 language.html
+├── ai-tools.html             # 旧链接跳转到 ai-intelligence.html
+├── history-geography.html    # 旧链接跳转到 humanities-history.html
+├── growth.html               # 旧链接跳转到 daily.html
 ├── about.html
 ├── style.css
 ├── script.js
@@ -132,8 +140,8 @@ https://你的用户名.github.io/仓库名/admin.html
 {
   "slug": "my-first-note",
   "title": "我的第一篇学习笔记",
-  "category": "english",
-  "categoryUrl": "english.html",
+  "category": "language",
+  "categoryUrl": "language.html",
   "summary": "这里写一段简短说明。",
   "date": "2026-05-25",
   "content": "# 标题\n\n## 我为什么写这篇？"

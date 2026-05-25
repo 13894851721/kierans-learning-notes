@@ -259,7 +259,7 @@ h3 {
 .notes-grid,
 .about-page-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
 
@@ -768,6 +768,45 @@ h3 {
 
   .admin-layout {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1040px) {
+  .navbar {
+    min-height: 66px;
+  }
+
+  .brand {
+    max-width: 230px;
+    font-size: 1.08rem;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 66px;
+    left: 14px;
+    right: 14px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    background: var(--color-card);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .nav-menu.is-open {
+    display: flex;
+  }
+
+  .nav-menu a {
+    border-radius: 10px;
   }
 }
 

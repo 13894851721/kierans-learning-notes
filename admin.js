@@ -6,10 +6,12 @@ const repoConfig = {
 };
 
 const categoryUrlMap = {
-  english: "english.html",
-  "ai-tools": "ai-tools.html",
-  history: "history-geography.html",
-  growth: "growth.html"
+  language: "language.html",
+  ai: "ai-intelligence.html",
+  humanities: "humanities-history.html",
+  society: "society-politics.html",
+  economy: "political-economy.html",
+  daily: "daily.html"
 };
 
 const tokenInput = document.querySelector("#github-token");
@@ -106,7 +108,7 @@ function loadPostIntoForm(post) {
 function resetForm() {
   fields.editingSlug.value = "";
   fields.title.value = "";
-  fields.category.value = "english";
+  fields.category.value = "language";
   fields.date.value = todayISO();
   fields.summary.value = "";
   fields.slug.value = "";
