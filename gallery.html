@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kieran 的个人相册，记录城市散步、学习桌面、日常片刻和生活观察。">
+  <title>我的相册 | Kieran's Learning Notes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="主导航">
+      <a class="brand" href="index.html">Kieran's Learning Notes</a>
+      <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" data-page="home">首页</a></li>
+        <li><a href="language.html" data-page="language">语言学习</a></li>
+        <li><a href="ai-intelligence.html" data-page="ai">AI 智能</a></li>
+        <li><a href="humanities-history.html" data-page="humanities">人文历史</a></li>
+        <li><a href="society-politics.html" data-page="society">社会时政</a></li>
+        <li><a href="political-economy.html" data-page="economy">政治经济</a></li>
+        <li><a href="daily.html" data-page="daily">日常记录</a></li>
+        <li><a href="gallery.html" data-page="gallery">我的相册</a></li>
+        <li><a href="about.html" data-page="about">关于我</a></li>
+        <li><a href="admin.html" data-page="admin">写文章</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container narrow">
+        <p class="eyebrow">我的相册</p>
+        <h1>把生活里的光、路和片刻也留下来。</h1>
+        <p>这里先放相册结构和占位图片。之后可以把真实照片放进 <code>assets/gallery/</code>，再替换页面里的图片路径。</p>
+      </div>
+    </section>
+
+    <section class="section compact-section">
+      <div class="container">
+        <div class="gallery-grid">
+          <article class="photo-card">
+            <img src="assets/gallery/walk.svg" alt="城市散步">
+            <div>
+              <span class="card-tag">城市散步</span>
+              <h2>路上的一天</h2>
+              <p>记录街道、天空、路牌、树影和偶然看到的风景。</p>
+            </div>
+          </article>
+          <article class="photo-card">
+            <img src="assets/gallery/desk.svg" alt="学习桌面">
+            <div>
+              <span class="card-tag">学习桌面</span>
+              <h2>书桌与屏幕</h2>
+              <p>记录学习工具、书、笔记、电脑和阶段性的工作状态。</p>
+            </div>
+          </article>
+          <article class="photo-card">
+            <img src="assets/gallery/daily.svg" alt="日常片刻">
+            <div>
+              <span class="card-tag">日常片刻</span>
+              <h2>普通生活</h2>
+              <p>记录一杯水、一顿饭、一段路、一点变化。</p>
+            </div>
+          </article>
+          <article class="photo-card">
+            <img src="assets/gallery/reading.svg" alt="阅读时刻">
+            <div>
+              <span class="card-tag">阅读时刻</span>
+              <h2>读书与笔记</h2>
+              <p>记录读过的书、摘录过的句子和安静学习的时间。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Kieran。作为一个学习项目而建立。</p>
+      <div class="footer-links">
+        <a href="index.html">笔记</a>
+        <a href="gallery.html">相册</a>
+        <a href="about.html">关于</a>
+        <a href="admin.html">写文章</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

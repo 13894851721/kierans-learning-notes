@@ -1,0 +1,8 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="420" rx="18" fill="#EDF3EA"/>
+  <path d="M118 110H306C334 110 356 132 356 160V322H146C116 322 92 298 92 268V136C92 122 104 110 118 110Z" fill="#FFFFFF" stroke="#C9D8C5" stroke-width="4"/>
+  <path d="M356 160C356 132 378 110 406 110H522C536 110 548 122 548 136V268C548 298 524 322 494 322H356V160Z" fill="#FFFFFF" stroke="#C9D8C5" stroke-width="4"/>
+  <path d="M142 164H296M142 204H270M142 244H304" stroke="#1F4E79" stroke-width="8" stroke-linecap="round" opacity=".35"/>
+  <path d="M406 164H506M406 204H486M406 244H518" stroke="#D4A017" stroke-width="8" stroke-linecap="round" opacity=".72"/>
+  <text x="92" y="74" fill="#1F4E79" font-family="Arial, sans-serif" font-size="32" font-weight="700">Reading Notes</text>
+</svg>

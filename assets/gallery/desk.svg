@@ -1,0 +1,9 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="420" rx="18" fill="#F5F1E8"/>
+  <rect x="72" y="78" width="300" height="198" rx="14" fill="#FFFFFF" stroke="#D9D0BF" stroke-width="4"/>
+  <rect x="404" y="104" width="132" height="172" rx="12" fill="#FFFFFF" stroke="#D9D0BF" stroke-width="4"/>
+  <path d="M116 128H318M116 168H286M116 208H330" stroke="#1F4E79" stroke-width="9" stroke-linecap="round" opacity=".42"/>
+  <path d="M430 144H510M430 178H492M430 212H512" stroke="#D4A017" stroke-width="8" stroke-linecap="round" opacity=".72"/>
+  <rect x="88" y="318" width="452" height="16" rx="8" fill="#1F4E79" opacity=".22"/>
+  <text x="74" y="54" fill="#1F4E79" font-family="Arial, sans-serif" font-size="32" font-weight="700">Study Desk</text>
+</svg>

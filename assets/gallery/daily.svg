@@ -1,0 +1,8 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="420" rx="18" fill="#F2F6FB"/>
+  <rect x="82" y="96" width="170" height="228" rx="18" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="4"/>
+  <rect x="282" y="72" width="276" height="252" rx="18" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="4"/>
+  <circle cx="168" cy="178" r="48" fill="#D4A017" opacity=".7"/>
+  <path d="M326 134H514M326 176H486M326 218H522M326 260H454" stroke="#1F4E79" stroke-width="8" stroke-linecap="round" opacity=".32"/>
+  <text x="82" y="60" fill="#1F4E79" font-family="Arial, sans-serif" font-size="32" font-weight="700">Daily Moments</text>
+</svg>

@@ -24,6 +24,7 @@ const pageMap = {
   "society-politics.html": "society",
   "political-economy.html": "economy",
   "daily.html": "daily",
+  "gallery.html": "gallery",
   "about.html": "about",
   "admin.html": "admin"
 };
@@ -222,6 +223,129 @@ function renderPostPage(posts) {
   `;
 }
 
+function renderTodayWidget() {
+  const dateEl = document.querySelector("#today-date");
+  const lunarEl = document.querySelector("#today-lunar");
+  if (!dateEl || !lunarEl) return;
+
+  const now = new Date();
+  dateEl.textContent = new Intl.DateTimeFormat("zh-CN", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    weekday: "long"
+  }).format(now);
+
+  try {
+    lunarEl.textContent = new Intl.DateTimeFormat("zh-CN-u-ca-chinese", {
+      month: "long",
+      day: "numeric"
+    }).format(now);
+  } catch {
+    lunarEl.textContent = "农历日期暂不可用";
+  }
+}
+
+function renderAlmanacWidget() {
+  const goodEl = document.querySelector("#almanac-good");
+  const badEl = document.querySelector("#almanac-bad");
+  if (!goodEl || !badEl) return;
+
+  const goodItems = [
+    "整理笔记、阅读、复盘",
+    "写作、学习新技能、散步",
+    "做计划、清理文件、联系朋友",
+    "练习表达、拍照、整理相册",
+    "慢慢推进重要的小事"
+  ];
+  const badItems = [
+    "拖延、熬夜、过度焦虑",
+    "冲动消费、同时开太多任务",
+    "只收藏不行动、反复比较",
+    "空想计划、忽略休息",
+    "把临时情绪当最终结论"
+  ];
+  const dayKey = Math.floor(Date.now() / 86400000);
+  goodEl.textContent = goodItems[dayKey % goodItems.length];
+  badEl.textContent = badItems[dayKey % badItems.length];
+}
+
+const weatherCodeText = {
+  0: "晴",
+  1: "大致晴朗",
+  2: "局部多云",
+  3: "阴",
+  45: "有雾",
+  48: "雾凇",
+  51: "小毛毛雨",
+  53: "毛毛雨",
+  55: "较强毛毛雨",
+  61: "小雨",
+  63: "中雨",
+  65: "大雨",
+  71: "小雪",
+  73: "中雪",
+  75: "大雪",
+  80: "阵雨",
+  81: "较强阵雨",
+  82: "强阵雨",
+  95: "雷雨"
+};
+
+async function fetchWeather(latitude, longitude, cityName) {
+  const tempEl = document.querySelector("#weather-temp");
+  const detailEl = document.querySelector("#weather-detail");
+  if (!tempEl || !detailEl) return;
+
+  const url = new URL("https://api.open-meteo.com/v1/forecast");
+  url.search = new URLSearchParams({
+    latitude,
+    longitude,
+    current: "temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m",
+    timezone: "auto"
+  });
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("weather request failed");
+    const data = await response.json();
+    const current = data.current;
+    const weatherText = weatherCodeText[current.weather_code] || "天气";
+    tempEl.textContent = `${cityName} ${Math.round(current.temperature_2m)}°C · ${weatherText}`;
+    detailEl.textContent = `湿度 ${current.relative_humidity_2m}% · 风速 ${Math.round(current.wind_speed_10m)} km/h`;
+  } catch {
+    tempEl.textContent = "天气暂时不可用";
+    detailEl.textContent = "稍后刷新，或检查浏览器网络权限。";
+  }
+}
+
+function renderWeatherWidget() {
+  const refreshButton = document.querySelector("#refresh-weather");
+  if (!document.querySelector("#weather-temp")) return;
+
+  const load = () => {
+    if (!navigator.geolocation) {
+      fetchWeather("31.2304", "121.4737", "上海");
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        fetchWeather(
+          String(position.coords.latitude),
+          String(position.coords.longitude),
+          "当前位置"
+        );
+      },
+      () => fetchWeather("31.2304", "121.4737", "上海"),
+      { timeout: 5000, maximumAge: 1800000 }
+    );
+  };
+
+  if (refreshButton) refreshButton.addEventListener("click", load);
+  load();
+}
+
 if (document.querySelector("[data-post-list]") || document.querySelector("[data-post-root]")) {
   loadPosts()
     .then((posts) => {
@@ -232,3 +356,7 @@ if (document.querySelector("[data-post-list]") || document.querySelector("[data-
       console.warn(error.message);
     });
 }
+
+renderTodayWidget();
+renderAlmanacWidget();
+renderWeatherWidget();
